@@ -124,7 +124,6 @@ def view_sample_predictions(model, loader, n):
     inputs, targets = next(iter(loader))
     with torch.no_grad():
         data = Variable(inputs.cuda())
-        print(len(data))
         label = Variable(targets.cuda())
         output = model(data)
         pred = get_predictions(output)
