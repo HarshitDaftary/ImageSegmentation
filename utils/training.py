@@ -84,7 +84,6 @@ def test(model, test_loader, criterion, epoch=1):
     for data, target in test_loader:
         with torch.no_grad():
             data = Variable(data.cuda())
-            print(len(data))
             target = Variable(target.cuda())
             output = model(data)
             test_loss += criterion(output, target)
